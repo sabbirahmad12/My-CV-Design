@@ -21,10 +21,10 @@
         /* Container for the whole CV */
         .cv-container {
             width: 100%;
-            max-width: 800px; /* Adjust as needed */
+            max-width: 800px;
             background-color: #fff;
             padding: 30px 50px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Headings */
@@ -64,12 +64,10 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
         }
-
         .header-subtitle {
-            font-size: 1em;
+            font-size: 1.4em;
             color: #666;
             margin-top: 5px;
-            font-size: 1.4em;
         }
         .profile-pic {
             width: 150px;
@@ -78,7 +76,7 @@
             overflow: hidden;
             margin-right: 25px;
             flex-shrink: 0;
-            border: 2px solid rgb(254, 254, 254)
+            border: 2px solid rgb(254, 254, 254);
         }
         .profile-pic img {
             width: 100%;
@@ -91,11 +89,10 @@
         .header-info h1 {
             margin-top: 0px;
             margin-bottom: 0px;
-
         }
         .contact-info {
             display: flex;
-            justify-content: flex-start; /* Aligns contact details to the left */
+            justify-content: flex-start;
             margin-top: 10px;
             flex-wrap: wrap;
             border-bottom: 1.5px solid #eee;
@@ -138,11 +135,11 @@
             margin-bottom: 15px;
         }
         .item-date, .item-details {
-            padding-right: 20px; /* Spacing between date and details */
+            padding-right: 20px;
         }
         .item-date {
             flex-basis: 25%;
-            min-width: 100px; /* Ensure date section has enough space */
+            min-width: 100px;
             font-weight: bold;
             color: #555;
             font-size: 0.9em;
@@ -167,12 +164,12 @@
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 2 columns minimum, adjust as needed */
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 10px;
             margin-top: 10px;
         }
         .skills-grid ul {
-            list-style: disc; /* Use discs for list items */
+            list-style: disc;
             padding-left: 20px;
             margin: 0;
         }
@@ -181,33 +178,41 @@
             margin-bottom: 5px;
         }
 
-        /* References */
-        .references-grid {
-            display: flex; /* Use flexbox for references */
-            justify-content: space-between;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            margin-top: 15px;
-        }
-        .reference-person {
-            flex: 1; /* Allow items to grow */
-            min-width: 250px; /* Minimum width for each reference person */
-            margin-right: 20px; /* Space between reference blocks */
-            margin-bottom: 20px; /* Space below reference blocks */
-        }
-        .reference-person:last-child {
-            margin-right: 0;
-        }
-        .reference-person p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-        .reference-person .ref-name {
-            font-weight: bold;
-            color: #222;
-        }
-        .reference-person .ref-title, .ref-contact {
-            color: #555;
-            font-size: 0.85em;
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            .cv-container {
+                padding: 20px;
+            }
+            .header-section {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-info div {
+                margin-left: 0;
+                margin-bottom: 5px;
+            }
+            .item-row {
+                flex-direction: column;
+                margin-bottom: 25px;
+            }
+            .item-date {
+                margin-bottom: 5px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -241,8 +246,7 @@
 
         <div class="section-title">ABOUT ME</div>
         <div class="about-me">
-            <p>I am a passionate and dedicated Software Engineer with strong expertise in Python programming and Tkinter-based application development. Currently pursuing a Diploma in Computer Science & Engineering at Barisal Polytechnic Institute, I have already completed several small projects including School Management System, Library Management System, To-Do List Manager, Online Voting System, Online Quiz System, and Weather Monitoring System.
-I am also exploring advanced Python, machine learning, and AI development, with a clear goal to become proficient in building intelligent and data-driven applications. Alongside academic learning, I actively share my knowledge through coding quizzes, resources, and projects to help others in their programming journey.</p>
+            <p>I am a passionate and dedicated Software Engineer with strong expertise in Python programming and Tkinter-based application development. Currently pursuing a Diploma in Computer Science & Engineering at Barisal Polytechnic Institute, I have already completed several small projects including School Management System, Library Management System, To-Do List Manager, Online Voting System, Online Quiz System, and Weather Monitoring System. I am also exploring advanced Python, machine learning, and AI development, with a clear goal to become proficient in building intelligent and data-driven applications. Alongside academic learning, I actively share my knowledge through coding quizzes, resources, and projects to help others in their programming journey.</p>
         </div>
 
         <div class="section-title">EDUCATION</div>
@@ -251,9 +255,7 @@ I am also exploring advanced Python, machine learning, and AI development, with 
                 <div class="item-date">2024 - Present<br><span class="location">Barisal Polytechnic Institute</span></div>
                 <div class="item-details">
                     <h3>Computer Science & Technology</h3>
-                    <p>Currently in 4th semester
-
-Focused on Java programming, software engineering fundamentals, and database-driven applications</p>
+                    <p>Currently in 4th semester Focused on Java programming, software engineering fundamentals, and database-driven applications</p>
                 </div>
             </div>
             <div class="item-row">
@@ -311,23 +313,7 @@ Focused on Java programming, software engineering fundamentals, and database-dri
             </ul>
         </div>
 
-        <!--<div class="section-title">REFERENCES</div>
-        <div class="references-grid">
-            <div class="reference-person">
-                <p class="ref-name">Niranjan Devi</p>
-                <p class="ref-title">CEO of Wardiere Company</p>
-                <p class="ref-contact">Phone: 123-456-7890</p>
-                <p class="ref-contact">Social: @reallygreatsite</p>
-            </div>
-            <div class="reference-person">
-                <p class="ref-name">Aarya Agarwal</p>
-                <p class="ref-title">HRD of Wardiere Company</p>
-                <p class="ref-contact">Phone: 123-456-7890</p>
-                <p class="ref-contact">Social: @reallygreatsite</p>
-            </div>
-        </div>-->
-
-    </div>
+        </div>
 
 </body>
 </html>
