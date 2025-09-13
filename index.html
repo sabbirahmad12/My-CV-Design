@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Md Sabbir Ahmad.jpg" type="image/x-icon">
+    <title>Md Sabbir Ahmad</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container for the whole CV */
+        .cv-container {
+            width: 100%;
+            max-width: 800px; /* Adjust as needed */
+            background-color: #fff;
+            padding: 30px 50px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 2.2em;
+            color: #222;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 1.1em;
+            font-family: "Montserrat", sans-serif;
+            color: #444;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1em;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            font-size: 1.3em;
+            color: #222;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Section */
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 1em;
+            color: #666;
+            margin-top: 5px;
+            font-size: 1.4em;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px 0px 15px 0px;
+            overflow: hidden;
+            margin-right: 25px;
+            flex-shrink: 0;
+            border: 2px solid rgb(254, 254, 254)
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-info {
+            flex-grow: 1;
+        }
+        .header-info h1 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+        }
+        .contact-info {
+            display: flex;
+            justify-content: flex-start; /* Aligns contact details to the left */
+            margin-top: 10px;
+            flex-wrap: wrap;
+            border-bottom: 1.5px solid #eee;
+            border-top: 1.5px solid #eee;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+        .contact-info div:first-child {
+            margin-left: 0;
+        }
+        .contact-info img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        /* About Me */
+        .about-me p {
+            font-size: 0.95em;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Education & Experience Items */
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .item-date, .item-details {
+            padding-right: 20px; /* Spacing between date and details */
+        }
+        .item-date {
+            flex-basis: 25%;
+            min-width: 100px; /* Ensure date section has enough space */
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .item-details {
+            flex-basis: 75%;
+        }
+        .item-details h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .item-details p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 0.9em;
+        }
+        .item-details .location {
+            color: #777;
+            font-size: 0.85em;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 2 columns minimum, adjust as needed */
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skills-grid ul {
+            list-style: disc; /* Use discs for list items */
+            padding-left: 20px;
+            margin: 0;
+        }
+        .skills-grid li {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        /* References */
+        .references-grid {
+            display: flex; /* Use flexbox for references */
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            margin-top: 15px;
+        }
+        .reference-person {
+            flex: 1; /* Allow items to grow */
+            min-width: 250px; /* Minimum width for each reference person */
+            margin-right: 20px; /* Space between reference blocks */
+            margin-bottom: 20px; /* Space below reference blocks */
+        }
+        .reference-person:last-child {
+            margin-right: 0;
+        }
+        .reference-person p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        .reference-person .ref-name {
+            font-weight: bold;
+            color: #222;
+        }
+        .reference-person .ref-title, .ref-contact {
+            color: #555;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <div class="header-section">
+            <div class="profile-pic">
+                <img src="Md Sabbir Ahmad.jpg" alt="Md Sabbir Ahmad's Profile Picture">
+            </div>
+            <div class="header-info">
+                <h1>MD SABBIR AHMAD</h1>
+                <div class="header-subtitle">Software Engineer</div>
+                <div class="contact-info">
+                    <div>
+                        <img src="phone-icon.png" alt="Phone Icon">
+                        <a href="tel:+8801761610326">+8801761610326</a>
+                    </div>
+                    <div>
+                        <img src="email-icon.png" alt="Email Icon">
+                        <a href="mailto:mdsabbir0326@gmail.com">mdsabbir0326@gmail.com</a>
+                    </div>
+                    <div>
+                        <img src="website-icon.png" alt="Website Icon">
+                        <a href="https://linktr.ee/sabbir_ahmad_42" target="_blank">www.mdsabbirahmad.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">ABOUT ME</div>
+        <div class="about-me">
+            <p>I am a passionate and dedicated Software Engineer with strong expertise in Python programming and Tkinter-based application development. Currently pursuing a Diploma in Computer Science & Engineering at Barisal Polytechnic Institute, I have already completed several small projects including School Management System, Library Management System, To-Do List Manager, Online Voting System, Online Quiz System, and Weather Monitoring System.
+I am also exploring advanced Python, machine learning, and AI development, with a clear goal to become proficient in building intelligent and data-driven applications. Alongside academic learning, I actively share my knowledge through coding quizzes, resources, and projects to help others in their programming journey.</p>
+        </div>
+
+        <div class="section-title">EDUCATION</div>
+        <div class="education-section">
+            <div class="item-row">
+                <div class="item-date">2024 - Present<br><span class="location">Barisal Polytechnic Institute</span></div>
+                <div class="item-details">
+                    <h3>Computer Science & Technology</h3>
+                    <p>Currently in 4th semester
+
+Focused on Java programming, software engineering fundamentals, and database-driven applications</p>
+                </div>
+            </div>
+            <div class="item-row">
+                <div class="item-date">2021 - 2023<br><span class="location">Sagordi Islamia Kamil Madrasah</span></div>
+                <div class="item-details">
+                    <h3>Dakhil</h3>
+                    <p>Completed Dakhil (Secondary School Certificate) with a focus on general education subjects.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">EXPERIENCE</div>
+        <div class="experience-section">
+            <div class="item-row">
+                <div class="item-date">2024 - Present<br><span class="location">ABC Company</span></div>
+                <div class="item-details">
+                    <h3>Python Developer</h3>
+                    <p><ul>
+                        <li>Developed multiple Tkinter-based applications such as Student Management System, School Management System, Puzzle Game, To-Do List Manager, and Weather Monitoring System</li>
+                        <li>Worked on modular application design with database integration</li>
+                        <li>Gained experience in UI/UX design, data storage with Excel/SQLite, and automation tools</li>
+                    </ul></p>
+                </div>
+            </div>
+            <div class="item-row">
+                <div class="item-date">2024 - Present<br><span class="location">ABC Studio</span></div>
+                <div class="item-details">
+                    <h3>Content Creator</h3>
+                    <p><ul>
+                        <li>Managing a Telegram channel where I post Python quizzes, cheat sheets, and project resources daily</li>
+                        <li>Helping beginners in programming by creating engaging coding challenges</li>
+                        <li>Building community interest in Python and Computer Science fundamentals</li>
+                    </ul></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">SKILLS</div>
+        <div class="skills-grid">
+            <ul>
+                <li>Python Programming</li>
+                <li>GUI Development</li>
+            </ul>
+            <ul>
+                <li>OOP</li>
+                <li>DSA</li>
+            </ul>
+            <ul>
+                <li>Database Management</li>
+                <li>Data Analysis</li>
+            </ul>
+            <ul>
+                <li>Front-End Basics</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+
+        <!--<div class="section-title">REFERENCES</div>
+        <div class="references-grid">
+            <div class="reference-person">
+                <p class="ref-name">Niranjan Devi</p>
+                <p class="ref-title">CEO of Wardiere Company</p>
+                <p class="ref-contact">Phone: 123-456-7890</p>
+                <p class="ref-contact">Social: @reallygreatsite</p>
+            </div>
+            <div class="reference-person">
+                <p class="ref-name">Aarya Agarwal</p>
+                <p class="ref-title">HRD of Wardiere Company</p>
+                <p class="ref-contact">Phone: 123-456-7890</p>
+                <p class="ref-contact">Social: @reallygreatsite</p>
+            </div>
+        </div>-->
+
+    </div>
+
+</body>
+</html>
