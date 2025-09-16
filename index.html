@@ -317,3 +317,233 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!---->
+
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ড্যাশবোর্ড - সাবস্ক্রিপশন কী</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- কাস্টম স্টাইলশীট -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add custom styles for the new button layout if needed, otherwise Tailwind will handle */
+        .bottom-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Space between buttons */
+            margin-top: 2rem;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+        .bottom-buttons-container .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .bottom-buttons-container .btn-primary {
+            background-color: #4f46e5; /* Primary color for Refresh */
+        }
+        .bottom-buttons-container .btn-primary:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+        .bottom-buttons-container .btn-success {
+            background-color: #22c55e; /* Success color for Generate Key */
+        }
+        .bottom-buttons-container .btn-success:hover {
+            background-color: #16a34a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Theme Toggle Button - Moved outside .dashboard-container for top-right positioning -->
+    <div class="theme-toggle-container">
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+
+    <div class="dashboard-container">
+        <h1>সাবস্ক্রিপশন কী ড্যাশবোর্ড</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>মোট কী জেনারেট হয়েছে</h3>
+                <p id="totalKeys">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>অ্যাক্টিভ কী</h3>
+                <p id="activeKeys">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>ব্যবহৃত কী</h3>
+                <p id="usedKeys">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>মেয়াদোত্তীর্ণ কী</h3>
+                <p id="expiredKeys">0</p>
+            </div>
+        </div>
+
+        <div class="key-list-section">
+            <h2>সকল জেনারেট করা কী</h2>
+            <p id="loadingMessage" class="loading-text">কী ডেটা লোড হচ্ছে...</p>
+            <div class="key-table-wrapper">
+                <table class="key-table hidden">
+                    <thead>
+                        <tr>
+                            <th>কী</th>
+                            <th>টাইপ</th>
+                            <th>এক্সপায়ারি ডেট</th>
+                            <th>জেনারেট করা হয়েছে</th>
+                            <th>স্ট্যাটাস</th>
+                            <th>অ্যাসাইন করা হয়েছে</th>
+                            <th>অ্যাকশন</th>
+                        </tr>
+                    </thead>
+                    <tbody id="keysTableBody">
+                        <!-- কী ডেটা এখানে লোড হবে -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- নতুন বাটন লেআউট -->
+        <div class="bottom-buttons-container">
+            <button id="refreshButton" class="btn btn-primary">রিফ্রেশ করুন</button>
+            <button id="goToGenerateKeyBtn" class="btn btn-success">কী জেনারেট করুন</button>
+        </div>
+    </div>
+<!-- কাস্টম জাভাস্ক্রিপ্ট - এখানে সরানো হয়েছে -->
+    <script src="script.js"></script>
+    <script>
+        // goToGenerateKeyBtn এর জন্য ইভেন্ট লিসেনার
+        document.addEventListener('DOMContentLoaded', () => {
+            const goToGenerateKeyBtn = document.getElementById('goToGenerateKeyBtn');
+            if (goToGenerateKeyBtn) {
+                goToGenerateKeyBtn.addEventListener('click', () => {
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!----->
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <title>Resume - Your Name</title>
+</head>
+<body>
+
+  <!-- Header: image + contact -->
+  <table cellpadding="10" cellspacing="0" border="0" width="100%">
+    <tr>
+      <td width="140" valign="top">
+        <!-- ছবির পথ বদলে দিবে -->
+        <img src="your-photo.jpg" alt="Your Photo" width="120" height="120" />
+      </td>
+      <td valign="top">
+        <h1 style="margin:0; padding:0;">BENJAMIN SHAH</h1>
+        <p style="margin:4px 0 0 0;">
+          <strong>Address:</strong> 123 Anywhere St., Any City<br />
+          <strong>Phone:</strong> 123-456-7890<br />
+          <strong>Email:</strong> hello@reallygreatsite.com<br />
+          <strong>Website:</strong> www.reallygreatsite.com
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <!-- SUMMARY -->
+  <h2>SUMMARY</h2>
+  <p>
+    Results-oriented Mechanical and Mechatronics Engineer seeking a challenging position to apply expertise in designing and implementing innovative solutions for complex engineering challenges. Proven track record of success in project management, problem-solving, and cross-functional collaboration. Adept at utilising cutting-edge technologies to optimise processes and enhance overall efficiency.
+  </p>
+
+  <hr />
+
+  <!-- WORK EXPERIENCE -->
+  <h2>WORK EXPERIENCE</h2>
+
+  <h3>Mechatronics Engineer, Borcelle Technologies <span style="float:right;">Jan 2023 - Present</span></h3>
+  <ul>
+    <li>Led development of an advanced automation system, achieving a 15% increase in operational efficiency.</li>
+    <li>Streamlined manufacturing processes, reducing production costs by 10%.</li>
+    <li>Implemented preventive maintenance strategies, resulting in a 20% decrease in equipment downtime.</li>
+  </ul>
+
+  <h3>System Engineer, Arrowai Industries <span style="float:right;">Feb 2021 - Dec 2022</span></h3>
+  <ul>
+    <li>Designed and optimised a robotic control system, realizing a 12% performance improvement.</li>
+    <li>Coordinated testing and validation, ensuring compliance with industry standards.</li>
+    <li>Provided technical expertise, contributing to a 15% reduction in system failures.</li>
+  </ul>
+
+  <h3>Junior Project Engineer, Salford & Co Manufacturing <span style="float:right;">Mar 2020 - Jan 2021</span></h3>
+  <ul>
+    <li>Managed full lifecycle of a cutting-edge automation project, meeting all milestones.</li>
+    <li>Conducted feasibility studies and risk assessments, mitigating potential project risks.</li>
+    <li>Collaborated with clients, leading to a 25% increase in customer satisfaction.</li>
+  </ul>
+
+  <hr />
+
+  <!-- EDUCATION -->
+  <h2>EDUCATION</h2>
+
+  <h3>Bachelor of Mechatronics Engineering with Honours <span style="float:right;">Aug 2016 - Oct 2019</span></h3>
+  <p>University of Engineering Excellence</p>
+  <ul>
+    <li>Major in Automotive Technology.</li>
+    <li>Thesis on "Technological Advancements within the current Mechatronics Industry".</li>
+  </ul>
+
+  <h3>Diploma in Mechanical Engineering <span style="float:right;">May 2014 - May 2016</span></h3>
+  <p>Engineering University</p>
+  <ul>
+    <li>Relevant coursework in Structural Design and Project Management.</li>
+  </ul>
+
+  <hr />
+
+  <!-- ADDITIONAL INFORMATION -->
+  <h2>ADDITIONAL INFORMATION</h2>
+  <ul>
+    <li><strong>Technical Skills:</strong> Mechatronics System Integration, Automotive Engineering Technology, Project Management, Robotics and Automation, CAD for Mechatronics.</li>
+    <li><strong>Languages:</strong> English, Malay, Japanese.</li>
+    <li><strong>Certifications:</strong> Professional Engineer (PE) License, Project Management Professional (PMP).</li>
+    <li><strong>Awards/Activities:</strong> Participated in the "Innovation for Tomorrow" community outreach program promoting STEM education.</li>
+  </ul>
+
+</body>
+</html>
