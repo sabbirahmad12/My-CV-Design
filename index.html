@@ -333,123 +333,74 @@
 
 
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ড্যাশবোর্ড - সাবস্ক্রিপশন কী</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- কাস্টম স্টাইলশীট -->
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Add custom styles for the new button layout if needed, otherwise Tailwind will handle */
-        .bottom-buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem; /* Space between buttons */
-            margin-top: 2rem;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-        }
-        .bottom-buttons-container .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        }
-        .bottom-buttons-container .btn-primary {
-            background-color: #4f46e5; /* Primary color for Refresh */
-        }
-        .bottom-buttons-container .btn-primary:hover {
-            background-color: #4338ca;
-            transform: translateY(-2px);
-        }
-        .bottom-buttons-container .btn-success {
-            background-color: #22c55e; /* Success color for Generate Key */
-        }
-        .bottom-buttons-container .btn-success:hover {
-            background-color: #16a34a;
-            transform: translateY(-2px);
-        }
-    </style>
+    <title>Mishkat Sharif - CV</title>
 </head>
-<body class="light-mode">
-    <!-- Theme Toggle Button - Moved outside .dashboard-container for top-right positioning -->
-    <div class="theme-toggle-container">
-        <button id="themeToggle" class="theme-toggle-btn">
-            <span class="light-icon">☀️</span>
-            <span class="dark-icon">🌙</span>
-        </button>
-    </div>
+<body>
 
-    <div class="dashboard-container">
-        <h1>সাবস্ক্রিপশন কী ড্যাশবোর্ড</h1>
+    <header>
+        <h1>Mishkat Sharif</h1>
+        <p>Software Engineer</p>
+        <p>Phone: 01641768883 | Email: mishkat.sharif.dev@gmail.com</p>
+        <p>Address: Barishal, Bangladesh</p>
+        <img src="pic.png" alt="Mishkat Sharif Profile Picture" width="150" height="150">
+    </header>
+    
+    <section>
+        <h2>Professional Summary</h2>
+        <hr>
+        <p>I am a Software Engineer who loves exploring different programming languages and discovering ways to make software more efficient and elegant. I have worked on several projects, such as an Online Quiz System and a Library Management System. Currently, I am working at Wide Serve Technology.</p>
+    </section>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>মোট কী জেনারেট হয়েছে</h3>
-                <p id="totalKeys">0</p>
-            </div>
-            <div class="stat-card">
-                <h3>অ্যাক্টিভ কী</h3>
-                <p id="activeKeys">0</p>
-            </div>
-            <div class="stat-card">
-                <h3>ব্যবহৃত কী</h3>
-                <p id="usedKeys">0</p>
-            </div>
-            <div class="stat-card">
-                <h3>মেয়াদোত্তীর্ণ কী</h3>
-                <p id="expiredKeys">0</p>
-            </div>
-        </div>
+    <section>
+        <h2>Skills</h2>
+        <hr>
+        <p><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, etc.</p>
+        <p><strong>Frameworks / Libraries:</strong> React, Node.js, Django, etc.</p>
+        <p><strong>Database Management:</strong> MySQL, MongoDB, etc.</p>
+        <p><strong>Other Tools:</strong> Git, VS Code, Figma, etc.</p>
+    </section>
 
-        <div class="key-list-section">
-            <h2>সকল জেনারেট করা কী</h2>
-            <p id="loadingMessage" class="loading-text">কী ডেটা লোড হচ্ছে...</p>
-            <div class="key-table-wrapper">
-                <table class="key-table hidden">
-                    <thead>
-                        <tr>
-                            <th>কী</th>
-                            <th>টাইপ</th>
-                            <th>এক্সপায়ারি ডেট</th>
-                            <th>জেনারেট করা হয়েছে</th>
-                            <th>স্ট্যাটাস</th>
-                            <th>অ্যাসাইন করা হয়েছে</th>
-                            <th>অ্যাকশন</th>
-                        </tr>
-                    </thead>
-                    <tbody id="keysTableBody">
-                        <!-- কী ডেটা এখানে লোড হবে -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <section>
+        <h2>Work Experience</h2>
+        <hr>
+        <h3>Software Engineer - Wide Serve Technology</h3>
+        <p>Current</p>
+        <ul>
+            <li>Developed and maintained web applications.</li>
+            <li>Improved software efficiency through optimized coding.</li>
+            <li>Worked on project management and client communication.</li>
+        </ul>
+    </section>
 
-        <!-- নতুন বাটন লেআউট -->
-        <div class="bottom-buttons-container">
-            <button id="refreshButton" class="btn btn-primary">রিফ্রেশ করুন</button>
-            <button id="goToGenerateKeyBtn" class="btn btn-success">কী জেনারেট করুন</button>
-        </div>
-    </div>
-<!-- কাস্টম জাভাস্ক্রিপ্ট - এখানে সরানো হয়েছে -->
-    <script src="script.js"></script>
-    <script>
-        // goToGenerateKeyBtn এর জন্য ইভেন্ট লিসেনার
-        document.addEventListener('DOMContentLoaded', () => {
-            const goToGenerateKeyBtn = document.getElementById('goToGenerateKeyBtn');
-            if (goToGenerateKeyBtn) {
-                goToGenerateKeyBtn.addEventListener('click', () => {
-                    window.location.href = 'index.html';
-                });
-            }
-        });
-    </script>
+    <section>
+        <h2>Projects</h2>
+        <hr>
+        <h3>Online Quiz System</h3>
+        <p>Description: Developed a system for creating and managing online quizzes.</p>
+        <p>Technologies Used: Add relevant techs here.</p>
+
+        <h3>Library Management System</h3>
+        <p>Description: Developed a system to manage books, members, and transactions.</p>
+        <p>Technologies Used: Add relevant techs here.</p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <hr>
+        <h3>Barishal Polytechnic Institute</h3>
+        <p>Degree / Diploma Name – Year of Graduation</p>
+    </section>
+
+    <section>
+        <h2>Certifications (Optional)</h2>
+        <hr>
+        <p>Example: Web Development Certification, Python Course, etc.</p>
+    </section>
+
 </body>
 </html>
 
